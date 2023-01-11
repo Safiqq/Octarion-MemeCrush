@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/grid.gd" type="Script" id=1]
+[ext_resource path="res://Art/S__1761346.jpg" type="Texture" id=2]
+
+[node name="game_window" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 3.0
+margin_right = 573.0
+margin_bottom = 1017.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="grid" type="Node2D" parent="."]
+script = ExtResource( 1 )
+width = 8
+height = 8
+offset = 64
+x_start = 64
+y_start = 928
