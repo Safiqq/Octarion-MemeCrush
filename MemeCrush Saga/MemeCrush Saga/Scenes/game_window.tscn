@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/grid.gd" type="Script" id=1]
 [ext_resource path="res://Art/S__1761346.jpg" type="Texture" id=2]
 [ext_resource path="res://Art/green_button04.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Enemies Scenes/AmongUs/amogusmerah.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Enemies Scenes/red sus meme.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/kenvector_future.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Scenes/HealthContainer.gd" type="Script" id=6]
 
@@ -62,32 +62,6 @@ margin_right = 123.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 1 )
 text = "2959/2959"
-align = 1
-valign = 1
-
-[node name="Move" type="TextureRect" parent="."]
-anchor_right = 0.715
-margin_left = 458.0
-margin_top = 32.0
-margin_right = 553.0
-margin_bottom = 81.0
-texture = ExtResource( 3 )
-expand = true
-stretch_mode = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Move"]
-margin_left = 21.0
-margin_top = 12.0
-margin_right = 80.0
-margin_bottom = 34.0
-alignment = 1
-
-[node name="Label" type="Label" parent="Move/HBoxContainer"]
-margin_top = 2.0
-margin_right = 59.0
-margin_bottom = 20.0
-custom_fonts/font = SubResource( 1 )
-text = "30/30"
 align = 1
 valign = 1
 

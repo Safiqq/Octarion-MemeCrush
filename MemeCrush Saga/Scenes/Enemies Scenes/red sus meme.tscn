@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Art/Untitled 01-11-2023 11.PNG" type="Texture" id=1]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=2]
+
+[node name="red sus meme" instance=ExtResource( 2 )]
+__meta__ = {
+"_edit_vertical_guides_": [ 0.0, 576.0, 287.0 ]
+}
+enemyname = "Sus Omagus"
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.399048, 0.399048 )
+texture = ExtResource( 1 )
