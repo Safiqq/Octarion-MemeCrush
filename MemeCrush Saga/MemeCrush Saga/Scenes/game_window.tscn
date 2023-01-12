@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/grid.gd" type="Script" id=1]
+[ext_resource path="res://Art/S__1761346.jpg" type="Texture" id=2]
+[ext_resource path="res://Art/green_button04.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Enemies Scenes/red sus meme.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/kenvector_future.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scenes/HealthContainer.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
+
+[node name="game_window" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 3.0
+margin_right = 573.0
+margin_bottom = 1017.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="grid" type="Node2D" parent="."]
+script = ExtResource( 1 )
+width = 8
+height = 8
+offset = 64
+x_start = 64
+y_start = 928
+y_offset = 3
+
+[node name="destroy_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="collapse_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="refill_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Health" type="TextureRect" parent="."]
+margin_left = 201.0
+margin_top = 372.0
+margin_right = 391.0
+margin_bottom = 421.0
+texture = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="HealthContainer" type="HBoxContainer" parent="Health"]
+margin_left = 30.0
+margin_top = 11.0
+margin_right = 166.0
+margin_bottom = 33.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Health/HealthContainer"]
+margin_left = 12.0
+margin_top = 2.0
+margin_right = 123.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "2959/2959"
+align = 1
+valign = 1
+
+[node name="Enemy panel placement (cuma buat ngeliat contoh)" parent="." instance=ExtResource( 4 )]
+visible = false
+script = null
+
+[node name="bliptimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="destroy_timer" to="grid" method="_on_destroy_timer_timeout"]
+[connection signal="timeout" from="collapse_timer" to="grid" method="_on_collapse_timer_timeout"]
+[connection signal="timeout" from="refill_timer" to="grid" method="_on_refill_timer_timeout"]
+[connection signal="timeout" from="bliptimer" to="grid" method="_on_bliptimer_timeout"]
