@@ -75,14 +75,14 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Move"]
+[node name="MoveContainer" type="HBoxContainer" parent="Move"]
 margin_left = 21.0
 margin_top = 12.0
 margin_right = 80.0
 margin_bottom = 34.0
 alignment = 1
 
-[node name="Label" type="Label" parent="Move/HBoxContainer"]
+[node name="Label" type="Label" parent="Move/MoveContainer"]
 margin_top = 2.0
 margin_right = 59.0
 margin_bottom = 20.0

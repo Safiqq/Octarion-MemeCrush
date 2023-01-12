@@ -9,7 +9,7 @@ export (String) var enemyname;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("HBoxContainer/Label").text = enemyname;
+	get_node("Label").text = enemyname;
 
 func blip():
 	var sprite = get_node("Sprite");

@@ -85,9 +85,9 @@ func _ready():
 	print(all_pieces);
 	spawn();
 	enemy();
-	health = int(get_node("../Health/HBoxContainer/Label").text.split("/")[0]);
+	health = int(get_node("../Health/HealthContainer/Label").text.split("/")[0]);
 	current_health = health;
-	max_move = int(get_node("../Move/HBoxContainer/Label").text.split("/")[0]);
+	max_move = int(get_node("../Move/MoveContainer/Label").text.split("/")[0]);
 
 func make_array():
 	var array = [];
@@ -228,7 +228,7 @@ func destroy_matched():
 	move_checked = true;
 	if was_matched:
 		current_health -= piece_value * count_matched + match_value + combo_value * (streak - 1);
-		get_node("../Move/HBoxContainer/Label").text = String(max_move - current_move) + "/" + String(max_move);
+		get_node("../Move/MoveContainer/Label").text = String(max_move - current_move) + "/" + String(max_move);
 		musuh.blip() 
 		get_parent().get_node("bliptimer").start()
 		get_parent().get_node("bliptimer").start()
@@ -241,7 +241,7 @@ func destroy_matched():
 				# Lose condition
 				pass;
 			else:
-				get_node("../Health/HBoxContainer/Label").text = String(current_health) + "/" + String(health);
+				get_node("../Health/HealthContainer/Label").text = String(current_health) + "/" + String(health);
 				get_parent().get_node("collapse_timer").start();
 	else:
 		swap_back();
