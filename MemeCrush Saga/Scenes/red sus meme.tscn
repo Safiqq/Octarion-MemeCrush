@@ -7,7 +7,6 @@
 __meta__ = {
 "_edit_vertical_guides_": [ 0.0, 576.0, 287.0 ]
 }
-health = 5000
 enemyname = "Sus Omagus"
 
 [node name="Sprite" parent="." index="0"]

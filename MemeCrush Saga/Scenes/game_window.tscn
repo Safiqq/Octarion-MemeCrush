@@ -27,7 +27,7 @@ x_start = 64
 y_start = 928
 y_offset = 3
 
-[node name="Destroy Timer" type="Timer" parent="."]
+[node name="destroy_timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
@@ -67,6 +67,6 @@ valign = 1
 visible = false
 script = null
 
-[connection signal="timeout" from="Destroy Timer" to="grid" method="_on_Destroy_Timer_timeout"]
+[connection signal="timeout" from="destroy_timer" to="grid" method="_on_destroy_timer_timeout"]
 [connection signal="timeout" from="collapse_timer" to="grid" method="_on_collapse_timer_timeout"]
 [connection signal="timeout" from="refill_timer" to="grid" method="_on_refill_timer_timeout"]

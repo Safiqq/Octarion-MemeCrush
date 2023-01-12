@@ -1,7 +1,7 @@
 extends Node2D
 
-export (int) var health
-export (String) var enemyname
+# export (int) var health = 2959;
+export (String) var enemyname;
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -9,9 +9,4 @@ export (String) var enemyname
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("Label").text = enemyname
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	get_node("Label").text = enemyname;
