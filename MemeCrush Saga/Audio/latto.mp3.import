@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/latto.mp3-faa99d388730f121c0fd3dc89ae33b9d.mp3str"
+
+[deps]
+
+source_file="res://Audio/latto.mp3"
+dest_files=[ "res://.import/latto.mp3-faa99d388730f121c0fd3dc89ae33b9d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

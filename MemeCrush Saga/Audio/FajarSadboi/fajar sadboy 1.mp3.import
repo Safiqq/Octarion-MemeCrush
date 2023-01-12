@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fajar sadboy 1.mp3-5c99393c2d0754c0b77cdd4037f3b828.mp3str"
+
+[deps]
+
+source_file="res://Audio/FajarSadboi/fajar sadboy 1.mp3"
+dest_files=[ "res://.import/fajar sadboy 1.mp3-5c99393c2d0754c0b77cdd4037f3b828.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

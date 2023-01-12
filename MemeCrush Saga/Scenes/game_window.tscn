@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/grid.gd" type="Script" id=1]
 [ext_resource path="res://Art/S__1761346.jpg" type="Texture" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://Scenes/Enemies Scenes/AmongUs/amogusmerah.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/kenvector_future.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Scenes/HealthContainer.gd" type="Script" id=6]
+[ext_resource path="res://Audio/BGM.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Audio/Damage.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/auggh 2.mp3" type="AudioStream" id=9]
+[ext_resource path="res://Audio/Score Point.wav" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
@@ -98,6 +102,18 @@ script = null
 [node name="bliptimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Score Point" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Aughh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
 
 [connection signal="timeout" from="destroy_timer" to="grid" method="_on_destroy_timer_timeout"]
 [connection signal="timeout" from="collapse_timer" to="grid" method="_on_collapse_timer_timeout"]

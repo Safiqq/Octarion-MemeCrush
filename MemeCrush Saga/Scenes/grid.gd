@@ -88,6 +88,7 @@ func _ready():
 	health = int(get_node("../Health/HealthContainer/Label").text.split("/")[0]);
 	current_health = health;
 	max_move = int(get_node("../Move/MoveContainer/Label").text.split("/")[0]);
+	get_node("../BGM").play();
 
 func make_array():
 	var array = [];
@@ -236,13 +237,15 @@ func destroy_matched():
 		if current_health <= 0:
 			# Win condition
 			change_enemy();
+			get_node("../Aughh").play();
 		else:
 			if max_move - current_move <= 0:
 				# Lose condition
-				pass;
+				get_node("../Damage").play();
 			else:
 				get_node("../Health/HealthContainer/Label").text = String(current_health) + "/" + String(health);
 				get_parent().get_node("collapse_timer").start();
+				get_node("../Score Point").play();
 	else:
 		swap_back();
 		streak = 1;

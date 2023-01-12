@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/auggh 3.mp3-44ce02aef9103d54e938ebb22a22668e.mp3str"
+
+[deps]
+
+source_file="res://Audio/auggh 3.mp3"
+dest_files=[ "res://.import/auggh 3.mp3-44ce02aef9103d54e938ebb22a22668e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

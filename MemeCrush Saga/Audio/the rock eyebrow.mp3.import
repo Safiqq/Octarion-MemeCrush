@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/the rock eyebrow.mp3-0fae079b02fcc5c140139b9fdc3fa411.mp3str"
+
+[deps]
+
+source_file="res://Audio/the rock eyebrow.mp3"
+dest_files=[ "res://.import/the rock eyebrow.mp3-0fae079b02fcc5c140139b9fdc3fa411.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

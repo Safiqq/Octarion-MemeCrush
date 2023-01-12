@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MIXUEHHH.mp3-bb3bb32305d4d4fc6ef981fd9812226b.mp3str"
+
+[deps]
+
+source_file="res://Audio/MIXUEHHH.mp3"
+dest_files=[ "res://.import/MIXUEHHH.mp3-bb3bb32305d4d4fc6ef981fd9812226b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
