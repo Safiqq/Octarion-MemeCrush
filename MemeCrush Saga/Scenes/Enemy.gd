@@ -10,6 +10,8 @@ export (String) var enemyname;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Label").text = enemyname;
+	var rng = RandomNumberGenerator.new().randi_range(2500, 5000);
+	get_node("../../Health/HealthContainer/Label").text = String(rng) + "/" + String(rng);
 
 func blip():
 	var sprite = get_node("Sprite");
