@@ -22,11 +22,14 @@ var possible_pieces = [
 
 # Enemies array
 var enemies = [
+	preload("res://Scenes/dedi.tscn"),
+	preload("res://Scenes/Gigachad.tscn"),
 	preload("res://Scenes/red sus meme.tscn")
 ];
+var musuh 
 
 # Enemy health
-export (int) var health = 2959;
+var health = floor(rand_range(2500,5000));
 var current_health = health;
 
 # Current pieces in the scene
@@ -72,6 +75,7 @@ func enemy():
 	var rand = floor(rand_range(0, enemies.size()));
 	var enemy = enemies[rand].instance();
 	add_child(enemy);
+	musuh = enemy
 
 func spawn():
 	for i in width:
@@ -197,10 +201,14 @@ func destroy_matched():
 	move_checked = true;
 	if was_matched:
 		current_health -= piece_value * count_matched + match_value + combo_value * (streak - 1);
+		musuh.blip() 
+		get_parent().get_node("bliptimer").start()
+		get_parent().get_node("bliptimer").start()
+		get_parent().get_node("bliptimer").start()
 		if current_health <= 0:
 			change_enemy();
 		else:
-			get_node("../Health/HBoxContainer/Label").text = String(current_health) + "/" + String(health);
+			get_node("../Health/HealthContainer/Label").text = String(current_health) + "/" + String(health);
 			get_parent().get_node("collapse_timer").start();
 	else:
 		swap_back();
@@ -269,3 +277,7 @@ func _on_collapse_timer_timeout():
 
 func _on_refill_timer_timeout():
 	refill();
+
+
+func _on_bliptimer_timeout():
+	musuh.blipback()

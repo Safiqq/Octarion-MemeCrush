@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/grid.gd" type="Script" id=1]
 [ext_resource path="res://Art/S__1761346.jpg" type="Texture" id=2]
 [ext_resource path="res://Art/green_button04.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/red sus meme.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/kenvector_future.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scenes/HealthContainer.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
@@ -45,15 +46,16 @@ margin_top = 372.0
 margin_right = 391.0
 margin_bottom = 421.0
 texture = ExtResource( 3 )
+script = ExtResource( 6 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Health"]
+[node name="HealthContainer" type="HBoxContainer" parent="Health"]
 margin_left = 30.0
 margin_top = 11.0
 margin_right = 166.0
 margin_bottom = 33.0
 alignment = 1
 
-[node name="Label" type="Label" parent="Health/HBoxContainer"]
+[node name="Label" type="Label" parent="Health/HealthContainer"]
 margin_left = 12.0
 margin_top = 2.0
 margin_right = 123.0
@@ -67,6 +69,11 @@ valign = 1
 visible = false
 script = null
 
+[node name="bliptimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="timeout" from="destroy_timer" to="grid" method="_on_destroy_timer_timeout"]
 [connection signal="timeout" from="collapse_timer" to="grid" method="_on_collapse_timer_timeout"]
 [connection signal="timeout" from="refill_timer" to="grid" method="_on_refill_timer_timeout"]
+[connection signal="timeout" from="bliptimer" to="grid" method="_on_bliptimer_timeout"]
