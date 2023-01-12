@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Untitled 01-11-2023 11.PNG-7eb030d6c0003b1ba5e49b4d166a10f7.stex"
+path="res://.import/roger.png-9f686c3aed4a61a6873e7a3762058542.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Untitled 01-11-2023 11.PNG"
-dest_files=[ "res://.import/Untitled 01-11-2023 11.PNG-7eb030d6c0003b1ba5e49b4d166a10f7.stex" ]
+source_file="res://Art/Memes/RogerSumatera/roger.png"
+dest_files=[ "res://.import/roger.png-9f686c3aed4a61a6873e7a3762058542.stex" ]
 
 [params]
 

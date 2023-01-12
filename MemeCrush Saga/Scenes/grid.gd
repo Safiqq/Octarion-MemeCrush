@@ -14,20 +14,45 @@ export (int) var y_offset;
 
 # Pieces array
 var possible_pieces = [
-	preload("res://Scenes/BluePiece.tscn"),
-	preload("res://Scenes/RedPiece.tscn"),
-	preload("res://Scenes/YellowPiece.tscn"),
-	preload("res://Scenes/GreenPiece.tscn")
+	preload("res://Scenes/Pieces Scenes/BluePiece.tscn"),
+	preload("res://Scenes/Pieces Scenes/RedPiece.tscn"),
+	preload("res://Scenes/Pieces Scenes/YellowPiece.tscn"),
+	preload("res://Scenes/Pieces Scenes/GreenPiece.tscn")
 ];
 
 # Enemies array
 var enemies = [
-	preload("res://Scenes/red sus meme.tscn")
+	preload("res://Scenes/Enemies Scenes/AmongUs/amogusabu.tscn"),
+	preload("res://Scenes/Enemies Scenes/AmongUs/amogusbirlang.tscn"),
+	preload("res://Scenes/Enemies Scenes/AmongUs/amogusbirmud.tscn"),
+	preload("res://Scenes/Enemies Scenes/AmongUs/amogusbirtu.tscn"),
+	preload("res://Scenes/Enemies Scenes/AmongUs/amogusmerah.tscn"),
+	preload("res://Scenes/Enemies Scenes/AmongUs/amogusoren.tscn"),
+	preload("res://Scenes/Enemies Scenes/AmongUs/amogusputih.tscn"),
+	preload("res://Scenes/Enemies Scenes/AmongUs/amogusungu.tscn"),
+	preload("res://Scenes/Enemies Scenes/DeddyCorb/deddy1.tscn"),
+	preload("res://Scenes/Enemies Scenes/DeddyCorb/deddy2.tscn"),
+	preload("res://Scenes/Enemies Scenes/DeddyCorb/deddy3.tscn"),
+	preload("res://Scenes/Enemies Scenes/DeddyCorb/deddy4.tscn"),
+	preload("res://Scenes/Enemies Scenes/FajarSadboi/fajar1.tscn"),
+	preload("res://Scenes/Enemies Scenes/FajarSadboi/fajar2.tscn"),
+	preload("res://Scenes/Enemies Scenes/FajarSadboi/fajar3.tscn"),
+	preload("res://Scenes/Enemies Scenes/FajarSadboi/fajar4.tscn"),
+	preload("res://Scenes/Enemies Scenes/GigaChad/gigachad1.tscn"),
+	preload("res://Scenes/Enemies Scenes/GigaChad/gigachad2.tscn"),
+	preload("res://Scenes/Enemies Scenes/GigaChad/gigachad3.tscn"),
+	preload("res://Scenes/Enemies Scenes/GigaChad/gigachad4.tscn"),
+	preload("res://Scenes/Enemies Scenes/GigaChad/gigachad5.tscn"),
+	preload("res://Scenes/Enemies Scenes/RogerSumatera/roger.tscn")
 ];
 
 # Enemy health
-export (int) var health = 2959;
-var current_health = health;
+export (int) var health;
+var current_health;
+
+# Player max moves
+var max_move;
+var current_move = 0;
 
 # Current pieces in the scene
 var all_pieces = [];
@@ -59,6 +84,9 @@ func _ready():
 	print(all_pieces);
 	spawn();
 	enemy();
+	health = int(get_node("../Health/HBoxContainer/Label").text.split("/")[0]);
+	current_health = health;
+	max_move = int(get_node("../Move/HBoxContainer/Label").text.split("/")[0]);
 
 func make_array():
 	var array = [];
@@ -139,6 +167,7 @@ func swap(column, row, direction):
 		other_piece.move(grid_to_pixel(column,row));
 		if !move_checked:
 			find_matches();
+			current_move += 1;
 
 func store_info(first_piece, other_piece, place, direction):
 	piece_one = first_piece;
@@ -197,11 +226,17 @@ func destroy_matched():
 	move_checked = true;
 	if was_matched:
 		current_health -= piece_value * count_matched + match_value + combo_value * (streak - 1);
+		get_node("../Move/HBoxContainer/Label").text = String(max_move - current_move) + "/" + String(max_move);
 		if current_health <= 0:
+			# Win condition
 			change_enemy();
 		else:
-			get_node("../Health/HBoxContainer/Label").text = String(current_health) + "/" + String(health);
-			get_parent().get_node("collapse_timer").start();
+			if max_move - current_move <= 0:
+				# Lose condition
+				pass;
+			else:
+				get_node("../Health/HBoxContainer/Label").text = String(current_health) + "/" + String(health);
+				get_parent().get_node("collapse_timer").start();
 	else:
 		swap_back();
 		streak = 1;
